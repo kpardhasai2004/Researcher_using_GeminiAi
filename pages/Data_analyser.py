@@ -11,8 +11,9 @@ model = genai.GenerativeModel('gemini-pro')
 # Function to generate content using Gemini API
 def generate_content(prompt):
     response = model.generate_content(prompt)
-    if response and 'text' in response:
-        return response['text']
+    print(response)
+    if response:
+        return response.text
     return "Failed to generate content."
 
 # Function to perform data analysis using Gemini API
