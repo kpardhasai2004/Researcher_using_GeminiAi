@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import requests
 import google.generativeai as genai
-from keys import api_key  # Assuming you have a separate file for API keys
+from keys import api_key
 
 # Configure Gemini API and model
 genai.configure(api_key=api_key)
@@ -45,8 +45,7 @@ def main():
 
         if st.button("Run Analysis"):
             if query:
-                # Selecting a sample row for demonstration (you can modify as per your requirement)
-                sample_data = df.head(5).to_dict()  # Converting top 5 rows to a dictionary for simplicity
+                sample_data = df.head(5).to_dict()
                 data = f"Sample Data: {sample_data}"
 
                 # Perform analysis using Gemini API
